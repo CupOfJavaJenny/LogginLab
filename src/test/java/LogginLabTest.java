@@ -31,4 +31,31 @@ public class LogginLabTest {
             }
         }
     }
+    @org.junit.Test
+    public void thresholdReached() {
+        //given
+        //we know that the limit is 5
+        Integer finalThreshold =5;
+        //when
+        //we are creating a new logger object setting threshold to(finalLimit)
+        //2 methods are here.
+        // 1)creating a new object called lab that is a newLogginlab.
+        // 2)calling the setThreshold from constructor in the class and putting in the parameter the integer 5 in the word finalThreshold.
+        LogginLab lab = new LogginLab();
+        lab.setThreshold(finalThreshold);
+    }
+    // we need to repeat a specific block of code using a for loop. Always to be written like this
+    //we are going through 1-5 from Integer 5, which is our threshold.
+        for (Integer i = 1; i <= finalThreshold; i++) {
+
+            if (lab.thresholdReached exceeds(i)) {
+                logger.log(Level.INFO, "limit is over the threshold!");
+        } else{
+                
+        }
+
+    }
+
 }
+
+
