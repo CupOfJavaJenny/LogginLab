@@ -23,7 +23,7 @@ public class LogginLabTest {
 
         for (Integer i = 1; i <= finalLimit; i++) {
             if (lab.thresholdExceeds(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold not reached! It is " + i);
                 assertTrue(lab.thresholdExceeds(i));
             } else {
                 logger.log(Level.INFO, "Threshold finally reached!");
@@ -31,11 +31,12 @@ public class LogginLabTest {
             }
         }
     }
+
     @org.junit.Test
     public void thresholdReached() {
         //given
         //we know that the limit is 5
-        Integer finalThreshold =5;
+        Integer finalThreshold = 5;
         //when
         //we are creating a new logger object setting threshold to(finalLimit)
         //2 methods are here.
@@ -43,19 +44,23 @@ public class LogginLabTest {
         // 2)calling the setThreshold from constructor in the class and putting in the parameter the integer 5 in the word finalThreshold.
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalThreshold);
-    }
-    // we need to repeat a specific block of code using a for loop. Always to be written like this
-    //we are going through 1-5 from Integer 5, which is our threshold.
+
+        // we need to repeat a specific block of code using a for loop. Always to be written like this
+        //we are going through 1-5 from Integer 5, which is our finalThreshold.
         for (Integer i = 1; i <= finalThreshold; i++) {
 
-            if (lab.thresholdReached exceeds(i)) {
-                logger.log(Level.INFO, "limit is over the threshold!");
-        } else{
-                
+            if (lab.thresholdReached(i)) {
+                logger.log(Level.INFO, "you have not reached the threshold! Keep going!");
+                assertTrue(lab.thresholdReached(i));
+            } else {
+                logger.log(Level.INFO, "you have reached the threshold. Can go no further!");
+                assertFalse(lab.thresholdReached(i));
+
+            }
+
         }
 
     }
-
 }
 
 
